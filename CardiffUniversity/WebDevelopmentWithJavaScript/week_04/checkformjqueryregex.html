@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Form</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style type="text/css">
+		body {
+			background:#E1E1F4;
+			color:#262675;
+			font-family:Arial, Helvetica, sans-serif
+			}
+			
+		p.txt {
+			background:#BFBFFF;
+			float:left;
+			clear:left;
+			width:15em;
+			text-align:right;
+			margin:0 .5em;
+			padding:0 .5em
+			}
+		p.bx,p.err,p.ok {
+			margin-left:18em
+			}
+		
+		#Submit {
+			clear:left;
+			float:left;
+			margin:1em 0 0 8em;
+			padding:0
+			}
+		
+		div#form {
+			width:40em
+			}
+		
+		div#notes {
+			position:absolute;
+			top:7em;
+			left:35em;
+			width:30em;
+			text-align:left;
+			background:#e1e1f4;
+			color:#BF0000
+			}
+		
+		.err {
+			background:#faa
+			}
+
+	</style>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		function checkForm() {
+
+			//reset background class by removing any err class attributes
+			$('#name').removeClass('err');	
+			$('#ad1').removeClass('err');	
+			$('#ad4').removeClass('err');	
+			$('#pc').removeClass('err');	
+			$('#memtype').removeClass('err');
+			$('#magrad').removeClass('err');		
+			$('#agreepar').removeClass('err');	
+
+			var isFormOK = true;
+			var errMsg = '';
+			
+			//check if the name is less than 5 chars (spaces, two chars, space(s), two chars, spaces )
+			var elementVal = $('#name').val();
+			if (!elementVal.match(/^\s*\S{2,}\s+\S{2,}/)) {
+				errMsg += '<li>Give your name</li>';
+				$('#name').addClass('err');
+				isFormOK = false;
+			} else { 
+				// Convert to uppercase, remove leading and trailing white space
+				$('#name').val(elementVal.toUpperCase().replace(/^\s+/, '').replace(/\s+$/, ''));
+			}
+
+			//check address line 1 ad1 (space, at least one char, optional space(s), at least 3 chars)
+    		elementVal = $('#ad1').val();
+			if (!elementVal.match(/^\s*\S{1,}\s*\S{3,}/)) {
+				errMsg += '<li>Give your address</li>';
+				$('#ad1').addClass('err');	
+				isFormOK = false;
+			}
+			else { 
+				// convert to uppercase and delete leading and trailing space
+				$('#ad1').val(elementVal.toUpperCase().replace(/^\s+/, '').replace(/\s+$/, ''));
+			}
+
+			elementVal = $('#ad2').val();
+			$('#ad2').val(elementVal.toUpperCase().replace(/^\s+/, '').replace(/\s+$/, ''));
+
+			elementVal = $('#ad3').val();
+			$('#ad3').val(elementVal.toUpperCase().replace(/^\s+/, '').replace(/\s+$/, ''));
+
+			//check address line 4 ad4 (Town & County) 3 alpha or more
+    		elementVal = $('#ad4').val();
+			if (!elementVal.match(/^\s*[A-Z]{3,}/i)) {
+				errMsg += '<li>Give your Town</li>';
+				$('#ad4').addClass('err');	
+				isFormOK = false;
+			} else { 
+				$('#ad4').val(elementVal.toUpperCase().replace(/^\s+/, '').replace(/\s+$/, ''));
+			}
+
+			//check post code pc
+   			elementVal=$('#pc').val();
+			if (!elementVal.match(/\s*[a-z][a-z]?\d[a-z0-9]?\s*\d[a-z][a-z]$/i)) {
+				errMsg += '<li>Give your post code</li>';
+				$('#pc').addClass('err');	
+				isFormOK = false;
+			} else {
+				var ux = elementVal.toUpperCase();
+				rx = new RegExp(/\s*([A-Z][A-Z]?\d[A-Z0-9]?)\s*(\d[A-Z][A-Z])$/);
+				ax = rx.exec(ux);
+				ucpc = ax[1] + " " + ax[2];
+				$("#pc").val(ucpc);
+			}
+
+			//check magazine options
+			elementVal = $("input[name=mag]");	//note returns array of radio button elements
+			if (!elementVal[0].checked && !elementVal[1].checked) {
+				errMsg += '<li>You need to select a magazine</li>';
+				$('#magrad').addClass('err');	
+				isFormOK = false;
+			}
+	
+			//check selected membership type
+    		elementVal = $('#memtype').val();
+			if (elementVal == 'x') {
+				errMsg += '<li>You need to select membership type</li>';
+				$('#memtype').addClass('err');	
+				isFormOK = false;
+			} else { 
+				//remove the 'please select option'
+				$("#x").remove();
+			}
+
+			//check agreed
+    		elementVal = $('#agree');
+			if (!elementVal.prop('checked')) {
+				errMsg += '<li>You must read and agree to the terms of membership</li>';
+				$('#agreepar').addClass('err');	
+				isFormOK = false;
+			}
+
+			errorsLength=$('.err').length;	//check how many element have 'err' class
+
+			if (errorsLength > 1){
+				errMsg = '<p>The following ' + errorsLength + ' fields are incorrect:</p><ul>' + errMsg;
+			}
+
+			if (errorsLength == 1){
+				errMsg = '<p>The following field is incorrect:</p><ul>' + errMsg;
+			}
+
+			errMsg = '<div style="border: thick solid #BF0000">' + errMsg + '</div>';
+
+			if (!isFormOK) {
+				$('#notes').html(errMsg);
+				$('#notes').hide();
+				$('#notes').attr('style','background:#d1d1e4');
+				$('#notes div').slideUp(10);
+				$('#notes').fadeIn(3000);
+				$('#notes div').slideDown('def');
+			}
+
+			return isFormOK;
+  		}	//end checkForm
+	</script>
+</head>
+
+<body>
+	<div id="notes"></div>
+
+	<div id="form"><h1>Wizzico Club </h1>
+		<h2>Membership Application Form</h2>
+		<form name="form1" id="form1" method="get" action="" onsubmit="return checkForm()">
+  			<p class="txt">Name:</p> 
+    		<p class="bx"><input name="name" type="text" id="name" /></p>
+    		<p class="txt">Address</p>
+    		<p class="bx"> 
+      			<input name="ad1" type="text" id="ad1" /><br />
+      			<input name="ad2" type="text" id="ad2" /><br />
+      			<input name="ad3" type="text" id="ad3" />
+      		</p>
+	 		<p class="txt">Town &amp; County</p>
+      		<p class="bx"><input name="ad4" type="text" id="ad4" /></p>
+	 		<p class="txt">Post Code</p>
+      		<p class="bx"><input name="pc" type="text" id="pc" /></p>
+    		<p class="txt">Magazine option</p>
+    		<p class="bx" id='magrad'>
+      			<label>
+      				<input type="radio"  name="mag" value="wiznews" />
+      				wizzo news
+      			</label><br />
+      			<label>
+      				<input type="radio"  name="mag" value="fun" />
+      				scripting fun
+      			</label><br />
+    		</p>
+  			<p class="txt">Membership level<br /></p>
+  			<p class="bx"> 
+    			<select id="memtype" name="memtype">
+      				<option id="x" value="x">Please select</option>
+      				<option value="gs">Grand Slam</option>
+      				<option value="tc">Triple Crown</option>
+      				<option value="ws">Wooden Spoon</option>
+    			</select>
+  			</p>
+  			<p class="txt">I have read the <a href="#">membership rules</a> and agree to them</p>
+  			<p class="bx" id="agreepar">
+    			<input type="checkbox" id="agree" name="agree" value="agreed" />
+  			</p>
+  			<p class="bx">
+    			<input type="submit" id="Submit" name="Submit" value="Submit" />
+  			</p>
+		</form>
+	</div>
+</body>
+</html>

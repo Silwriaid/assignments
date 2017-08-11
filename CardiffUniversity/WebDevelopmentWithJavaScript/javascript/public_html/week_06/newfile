@@ -1,0 +1,17 @@
+Exercise
+l What is the difference between :file and
+[type="file"]. Why might you prefer the second?
+
+    For better performance in modern browsers, use [type="file"] instead.
+
+l What does $.ajax(settings) do?
+
+A set of key/value pairs that configure the Ajax request. All settings are optional. A default can be set for any option with $.ajaxSetup().
+
+l What does $(selector).delegate( selector,
+eventType, handler ) do?
+
+Attach a handler to one or more events for all elements that match the selector, now or in the future, based on a specific set of root elements.
+
+l Why would you not use it now?
+Deprecated

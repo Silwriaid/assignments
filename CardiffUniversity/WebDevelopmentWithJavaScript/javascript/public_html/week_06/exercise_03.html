@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Magazine Subscription Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+          <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+          
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+        
+        <script src="js/validation.js"></script>
+        
+     <script>
+        $( function() {
+        $( "#stdate" ).datepicker({dateFormat: "dd MM yy"});
+    });
+  </script>
+<!--
+add links to jquery and jqueryui.
+-->         
+        <style>
+            body{
+                font-family: Arial,Helvetica,sans-serif;
+            }
+            form, h1{
+                margin: 4%;
+            }
+            input, select{
+                margin-bottom: 1em;
+                margin-left: 3em;
+                font-size: 100%;
+
+            }
+            /*           input[type=submit]{
+                            padding: 0.5em 1em 0.5em 1em;
+                            color: #fff;
+                            font-size: 110%;
+                            background: #d40e52;
+                            margin-left: 0;
+                            border: 0px;
+                            border-radius: 4px;
+                        }  */
+            h1, h3{
+                color: #d40e52;
+            }
+            label{
+                width: 18%;
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Magazine Subscription Form1</h1>
+        
+        <div id="notes"></div>
+<!--
+set the form method, action and submit event
+-->
+        <form onsubmit="return checkForm()" name="form1" id="form1">
+            <h3>Personal details</h3>
+        
+            <label for="title">Title</label>
+            <select name="title" id="title">
+                <option value="">Select title</option>
+                <option value="Mr">Mr</option>
+                <option value="Mrs" selected>Mrs</option>
+                <option value="Ms">Ms</option>
+                <option value="Dr">Dr</option>
+            </select><br>
+            <label for="firstname">First name</label>
+            <input type="text" name="firstname" id="firstname"><br>
+            <label for="middlename">Middle name</label>
+            <input type="text" name="middlename" id="middlename"><br>
+            <label for="lastname">Last name</label>
+            <input type="text" name="lastname" id="lastname"><br>
+            
+            <label for="add1">Address</label>
+            <input type="text" name="add1" id="add1"><br>
+            <label for="add1"></label>
+            
+            <input type="text" name="add2" id="add2"><br>
+            <label for="add1"></label>
+            <input type="text" name="add3" id="add3"><br>
+            <label for="add1">Postcode</label>
+            <input type="text" name="postcode" id="postcode"><br>
+            <label for="add1">Telephone</label>
+            <input type="text" name="tel" id="tel"><br>
+            <label for="add1">Email</label>
+            <input type="text" name="email" id="email"><br>
+            <label for="add1">Confirm email</label>
+            <input type="text" name="confirm" id="confirm"><br>
+            <h3>Select at least one magazines for subscription</h3>
+            <label for="php">PHP Today</label>
+            <input type="checkbox" id="agree1" name="php" value="php" /><br>
+            <label for="realjs">Real Javascript</label>
+            <input type="checkbox" id="agree2" name="realjs" value="php" /><br>
+            <label for="mvc">MVC Frameworks Today</label>
+            <input type="checkbox" id="agree3" name="mvc" value="mvc" /><br>
+            <label for="add1">Start date</label>
+            <input type="text" name="stdate" id="stdate"><br>
+            <br><br>
+            <input type="submit" id="Submit" name="Submit" value="Submit" />
+
+        </form>
+    </body>
+</html>

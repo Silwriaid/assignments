@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Add a method to the Date object which will return the current month in myProp.</p>
+
+<button onclick="myFunction()">current month</button>
+
+<p id="demo"></p>
+
+<script>
+Date.prototype.myMMM = function() {
+    if (this.getMonth() == 0){this.myProp = "Jan"};
+    if (this.getMonth() == 1){this.myProp = "Feb"};
+    if (this.getMonth() == 2){this.myProp = "Mar"};
+    if (this.getMonth() == 3){this.myProp = "Apr"};
+    if (this.getMonth() == 4){this.myProp = "May"};
+    if (this.getMonth() == 5){this.myProp = "Jun"};
+    if (this.getMonth() == 6){this.myProp = "Jul"};
+    if (this.getMonth() == 7){this.myProp = "Aug"};
+    if (this.getMonth() == 8){this.myProp = "Sep"};
+    if (this.getMonth() == 9){this.myProp = "Oct"};
+    if (this.getMonth() == 10){this.myProp = "Nov"};
+    if (this.getMonth() == 11){this.myProp = "Dec"};
+};
+
+function myFunction() {
+    var d = new Date();
+    d.myMMM();
+    document.getElementById("demo").innerHTML = d.myProp;
+}
+</script>
+
+</body>
+</html>

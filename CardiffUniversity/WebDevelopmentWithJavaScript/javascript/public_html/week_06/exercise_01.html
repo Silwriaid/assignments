@@ -1,0 +1,44 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery.trim demo</title>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <body>
+        <pre id="winsize"></pre>
+        <pre id="trimmed"></pre>
+        <pre id="addtext">how are you</pre>
+        <button>Toggle</button>
+        <p>Hello</p>
+        <p style="display: none">Good Bye</p>
+
+        <script>
+            //look in attribute dimensions to output the width of the browser to id = winsize
+            var width = $( window ).width();
+            $('#winsize').html("browser width is " + $( window ).width());
+
+            var str = "         lots of spaces before and after         ";
+            //look in core to "trim" the above string of all spaces  - output to id = trimmed            
+            $('#trimmed').html($.trim(str));
+
+            //look in manipulation / DOM insertion to add "Hello" at beginning (inside) of element where id = addtext
+            //var insertStr = $( "#addtext" ).html();
+            //$( "#addtext" ).html().insertBefore( "hello" );
+            $( "#addtext" ).prepend( "Hello " );
+
+            //set a click event on button (mouse events) to toggle between show / hide of all paragraphs (look in effects)
+            
+            $( "button" ).click(function() {
+                
+                $( "#winsize" ).toggle();
+                $( "#trimmed" ).toggle();
+                $( "#addtext" ).toggle();
+                $("p").toggle();
+            });
+
+        </script>
+
+    </body>
+</html>

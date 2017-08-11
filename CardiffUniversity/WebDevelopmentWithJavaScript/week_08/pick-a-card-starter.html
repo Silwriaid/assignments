@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Cards</title>
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+		<script>
+            function pickCard() {
+                // Generate a value for the card
+                //
+                // Use Math.floor() and Math.random() to generate a random number between 1 and 13
+                //
+                // Then use a switch statement to do the following:
+                // Convert the number 1 to say Ace, 11 to say Jack, 12 to say Queen and 13 to say King
+                // Convert all the other numbers to strings using parseInt()
+                //
+                // Outside of the switch, append the resulting string to the #result paragraph element
+                
+
+                // Generate the suit
+                //
+                // Use Math.floor() and Math().random again to generate a suit value between 1 and 4
+                //
+                // Use a switch statement to convert the number to a string that says:
+                //    ' of Spades<br>'
+                //    ' of Clubs<br>'
+                //    ' of Hearts<br>' or
+                //    ' of Diamonds<br>'
+                //
+                // Outside of the switch, append the resulting string to the #result paragraph element
+                
+                // The result should be that the user should see a new card display on a new line
+                // each time the 'drawcard' button is clicked
+                
+            } // end pickCard
+		</script>
+	</head>
+
+	<body>
+		<input type="button" name="drawcard" id="drawcard" value="Pick a Card" onclick="pickCard()" />
+		<p id="result"></p>
+	</body>
+</html>

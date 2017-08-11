@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script type="text/javascript">
+            function loadXMLDoc() {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+                //access file using GET method
+                xmlhttp.open("GET", "ajax.txt", false);
+                xmlhttp.send('');
+                document.getElementById("response").innerHTML = xmlhttp.responseText;
+            }
+		</script>
+	</head>
+	<body>
+
+		<div id="response">
+			<p style="font-size:xx-large">
+				Ajax will change the text here
+			</p>
+		</div>
+		<input name="ajaxtest" type="button" value="change text" onclick="loadXMLDoc()"/>
+
+	</body>
+</html>

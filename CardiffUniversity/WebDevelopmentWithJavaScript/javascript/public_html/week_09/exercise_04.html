@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JQuery JSONP</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+ 
+        $("#useJSONP").click(function(){
+                // Create a jquery ajax call using jsonp
+                
+                
+                $.ajax({type: "POST",
+                        url: "http://www.peredur.net/whatserver/jsonp-server.php",
+                        data: {name: 'Fred'},   
+                        success: function() { alert('success'); },
+                        jsonp: 'callback',
+                        jsonpCallback: 'jsonpCallback',
+                        dataType: "jsonp"});
+                
+                // set the callback function to jsonpCallback below
+                // url: http://www.peredur.net/whatserver/jsonp-server.php
+                // pass your name eg {name: 'Fred'} as data
+        });
+ 
+    });
+     
+    function jsonpCallback(data){
+        $('#jsonpResult').text(data.message);
+    }
+    </script>
+  </head>
+  
+  <body>
+    <input type="button" id="useJSONP" value="Use JSONP"></input><br /><br />
+    <span id="jsonpResult"></span>
+  </body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<body>
+
+<h1 onclick="alert('clicked');">Test</h1>
+
+
+<!-- Add an onsubmit listener to the form element, which will call the checkForm() function -->
+<form onsubmit="return checkForm()" name="form1" id="form1" method="post" action="showform.html">
+
+
+</body>
+</html>
+
+
+<body onload="myFunction()">
+
+
+
+<script>
+    document.write("<h1>It worked</h1>");
+
+    function changeH1() {
+
+        document.getElementById("fickle").innerHTML="It's changed!";
+    }
+</script>
+
+
+// Regex
+</script>
+    //  regex
+    console.log(/[A-Z]{2}[0-9]{2}\s[0-9][A-Z]{2}/.test("CF14 7BT"));
+
+    console.log("one to 100 then to 200".match(/[0-9]{3}/g ) );
+
+    var aStr = "turn the dark on before it gets dark"
+    console.log(aStr.replace("dark", "light" ) );
+
+    aStr = "The weather is hot today";
+    var myarray = aStr.split(" ");
+    console.log(myarray);
+</script>
+
+
+//  Loop
+<script>
+    var cars = ["Saab", "BMW", "Ford", "Seat", "VW", "Toyota"];
+    document.write("Full array: " + cars + "<br \>");
+    var i=0;
+    // cars.length = 6 and not 5. array index starts at 0 therefore last array element is cars[5]
+    // continue returns to the condition. break exits the loop.
+
+    while(i<cars.length){
+        if(cars[i] == "BMW") {
+            i++;
+            continue;
+        }
+        document.write(cars[i] + "<br \>");
+        if(cars[i] == "VW"){
+            break;
+        }
+        i++;
+    }
+
+</script>
+
+//  Date picker
+<script>
+    $( function() {
+        $( "#datepicker" ).datepicker({dateFormat: "dd MM yy"});
+    });
+</script>
+
+<body>
+
+  <p>Date: <input type="text" id="datepicker"></p>
+
+</body>
+
+
+
+//  Tabs
+<script type="text/javascript">
+    $(function () {
+        $("#tabs").tabs();
+    });
+</script>
+
+<body>
+<div id="tabs">
+    <ol start="50">
+        <li>
+            <a href="#tab-1">Click tab 1</a>
+        </li>
+        <li>
+            <a href="#tab-2">Click tab 2</a>
+        </li>
+        <li>
+            <a href="#tab-3">Click tab 3</a>
+        </li>
+    </ol>
+
+    <p id="tab-1">
+        This is tab one
+    </p>
+
+    <p id="tab-2">
+        This is tab two
+    </p>
+
+    <p id="tab-3">
+        This is tab 3
+    </p>
+</div>
+</body>
+
+
+<script>
+    $(function () {
+        $("#accordion").accordion();
+    });
+</script>
+
+
+//  Accordion
+<body>
+<div id="accordion">
+    <h3>Section 1</h3>
+    <div>
+        <p>
+            Paragraph 1
+        </p>
+    </div>
+    <h3>Section 2</h3>
+    <div>
+        <p>
+            Paragraph 2
+        </p>
+    </div>
+    <h3>Section 3</h3>
+    <div>
+        <p>
+            Paragraph 3
+        </p>
+        <ul>
+            <li>
+                List item one
+            </li>
+            <li>
+                List item two
+            </li>
+            <li>
+                List item three
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+
+
+Switch
+<script>
+    function pickCard() {
+        // Generate a value for the card
+
+        var cardValue = Math.ceil(Math.random() * 13);
+
+        //
+        // Then use a switch statement to do the following:
+        // Convert the number 1 to say Ace, 11 to say Jack, 12 to say Queen and 13 to say King
+        // Convert all the other numbers to strings using parseInt()
+        //
+        // Outside of the switch, append the resulting string to the #result paragraph element
+
+        var card;
+
+        switch (cardValue) {
+
+            case (1):
+                card = "Ace";
+                break;
+            case (11):
+                card = "Jack";
+                break;
+            case (12):
+                card = "Queen";
+                break;
+            case (13):
+                card = "King";
+                break;
+            default:
+                card = "" + cardValue;
+                break;
+        }
+    }

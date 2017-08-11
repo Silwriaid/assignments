@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <title>var_scope</title>
+        <meta name="description" content="">
+        <meta name="author" content="Peter">
+
+        <meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+        <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <script>
+            var myVar = 'The Global Value';
+
+            function localTestOne() {
+                var myVar = 'The Local Value';
+
+                return myVar;
+
+            }
+
+            var anotherVar = localTestOne();
+            alert('Value of myVar after calling localTestOne is: ' + myVar);
+            alert('Value of anotherVar inside localtestOne: ' + anotherVar);
+
+            function localTestTwo() {
+                myVar = 'The Local Value';
+                return myVar;
+            }
+
+            anotherVar = localTestTwo();
+            alert('Value of myVar after calling localTestTwo is: ' + myVar);
+        </script>
+    </head>
+
+    <body>
+        <div>
+            <header>
+                <h1>var_scope</h1>
+            </header>
+            <nav>
+                <p>
+                    <a href="/">Home</a>
+                </p>
+                <p>
+                    <a href="/contact">Contact</a>
+                </p>
+            </nav>
+
+            <div>
+
+            </div>
+
+            <footer>
+                <p>
+                    &copy; Copyright  by Peter
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

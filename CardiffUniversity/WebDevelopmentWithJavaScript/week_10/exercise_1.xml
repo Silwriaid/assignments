@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE email SYSTEM "exercise_1.dtd">
+
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<email>
+    <from>me</from>
+    <to>you</to>
+    <cc>him</cc>
+    <bcc>here</bcc>
+    <body>Hello there</body>
+</email>

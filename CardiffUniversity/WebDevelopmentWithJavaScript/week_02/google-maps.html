@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>Google Maps</title>
+		<meta name="description" content="google maps api test">
+		<meta name="author" content="Peter">
+
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+		<!--
+		Explicitly set the size of everything, in case the browser is in quirks mode
+		In quirks mode, the map size would be set to 0,0
+		-->
+		<style type="text/css">
+			html {
+				height: 100%
+			}
+			body {
+				height: 80%;
+				margin: 0 auto;
+				padding: 0
+			}
+			#map_canvas {
+				height: 100%
+			}
+		</style>
+
+		<!-- Fetch the maps API and set sensor to FALSE (not using GPS etc) -->
+		<script type="text/javascript"
+		src="http://maps.googleapis.com/maps/api/js?sensor=FALSE"></script>
+
+		<!--
+		Declare and define a function called 'initialize'.  The body of this function
+		defines the map options in a variable called 'mapOptions', and then creates a
+		new Map object in the variable 'map', giving it the 'map_canvas' element along
+		with the map options in 'mapOptions'.
+		-->
+		<script type="text/javascript">
+            function initialize() {
+                // lat and long can be obtained from http://universimmedia.pagesperso-orange.fr/geo/loc.htm
+                var theCenter = new google.maps.LatLng(51.53884, -3.193194);
+                var mapOptions = {
+                    center : theCenter,
+                    zoom : 16,
+                    mapTypeId : google.maps.MapTypeId.ROADMAP,
+                    streetViewControl : true
+                };
+
+                // Fill the 'map_canvas' div
+                // NOTE: this will only work if you have already included the maps API
+                var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+
+                // Add a marker
+                var marker = new google.maps.Marker({
+                    position : theCenter,
+                    map : map,
+                    title : "Sainsbury's Thornhill"
+                });
+                
+                // Add an InfoWindow...
+                // The text to go inside the window
+                var contentString = '<div id="content">' +
+										'<div id="infotitle"></div>' +
+										'<h1>Sainsburys Superstore</h1>' +
+										'<div id="infoContent">' +
+											'<p><em>Sainsburys Superstore</em> is located near N. Cardiff Medical Centre ' +
+											'on Excalibur Drive, Thornhill.</p>' +
+										'</div>' +
+									'</div>';
+				
+				// Create the InfoWindow object (note: this doesn't display it)					
+				var infowindow = new google.maps.InfoWindow({content: contentString});
+				
+				// Add an event listener so that the info window is shown when the marker is clicked
+				google.maps.event.addListener(marker, 'click', function() {infowindow.open(map, marker);});
+            }
+		</script>
+
+	</head>
+	<!-- Call the initialize function defined above when the page body loads -->
+	<body onload="initialize()">
+
+		<!-- define a div with id 'map_canvas' to  hold the map -->
+		<div id="map_canvas" style="width:100%; height:100%"></div>
+
+	</body>
+</html>

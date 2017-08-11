@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Cards</title>
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+		<script>
+            function pickCard() {
+                // generate value for card
+                var cvalue = Math.floor(Math.random() * 13) + 1;
+                switch(cvalue) {
+                case 13:
+                    cvalue = ' King';
+                    break;
+                case 12:
+                    cvalue = ' Queen';
+                    break;
+                case 11:
+                    cvalue = ' Jack';
+                    break;
+                case 1:
+                    cvalue = ' Ace';
+                    break;
+                default:
+                    cvalue = ' ' + parseInt(cvalue);
+                } //end case
+                $('#result').append(cvalue);
+
+                // suit
+                var csuit = Math.floor(Math.random() * 4) + 1;
+                switch(csuit) {
+                case 1:
+                    csuit = ' of Spades<br>';
+                    break;
+                case 2:
+                    csuit = ' of Clubs<br>';
+                    break;
+                case 3:
+                    csuit = ' of Hearts<br>';
+                    break;
+                case 4:
+                    csuit = ' of Diamonds<br>';
+                    break;
+                } // end case
+                $('#result').append(csuit);
+            } // end pickCard
+		</script>
+	</head>
+
+	<body>
+		<input type="button" name="drawcard" id="drawcard" value="Pick a Card" onclick="pickCard()" />
+		<p id="result"></p>
+	</body>
+</html>

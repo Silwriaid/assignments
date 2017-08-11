@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>function</title>
+        <style type="text/css">
+            input {
+                text-align: right;
+            }
+        </style>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script type="text/javascript">
+            // functions go here
+            // sumThem()
+            // showIt()
+
+            function sumThem(value1, value2, value3) {
+
+                if (isNaN(value1) === false && isNaN(value2) === false && isNaN(value3) === false) {
+
+                    var total = parseFloat(value1) + parseFloat(value2) + parseFloat(value3);
+
+                    return total;
+                }
+                else {
+                    $('#error').html("Not a number");
+                }
+            }
+
+            function showIt() {
+
+                var val1 = $('#val1').val();
+                var val2 = $('#val2').val();
+                var val3 = $('#val3').val();
+
+                var answer = sumThem(val1, val2, val3);
+                $('#owt').val(answer);
+            }
+
+        </script>
+    </head>
+
+    <body>
+        <h1>Calculator</h1>
+        <form method="get" name="sums" id="sums" onsubmit="showIt();
+                return false;">
+            <input type="text" name="val1" id="val1" />
+            +
+            <input type="text" name="val2" id="val2" />
+            +
+            <input type="text" name="val3" id="val3" />
+            =
+            <input type="text" name="owt" id="owt" readonly="readonly" />
+            <input type="submit" value="add" />
+        </form>
+
+        <div id="error"></div>
+    </body>
+</html>

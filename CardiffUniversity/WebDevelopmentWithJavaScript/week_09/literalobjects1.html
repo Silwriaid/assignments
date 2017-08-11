@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>function</title>
+		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+		<script type="text/javascript">
+            $(function() {		//jQuery execute onload
+                //	create a literal object
+                employee = {
+                    fullname : 'fred bloggs',
+                    age : 21,
+                    job : 'manager'
+                };
+                
+                //	access full name using dot notation
+                x = employee.fullname;
+                alert('employee.fullname = ' + x);
+                
+                // access age using dot notation
+                x = employee.age;
+                alert('employee.age = ' + x);
+
+                //access full name using array notation
+                x = employee['fullname'];
+                alert('employee[\'fullname\'] = ' + x);
+            });		//end of execute on load with jQuery
+		</script>
+	</head>
+
+	<body>
+		<div id="test"></div>
+	</body>
+</html>

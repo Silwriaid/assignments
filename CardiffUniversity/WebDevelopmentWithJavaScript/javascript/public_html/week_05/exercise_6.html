@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tabs</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+        <script type="text/javascript">
+            $(function () {
+                $("#tabs").tabs();
+            });
+        </script>
+    </head>
+
+    <body>
+        <div id="tabs">
+            <ol start="50">
+                <li>
+                    <a href="#tab-1">Click tab 1</a>
+                </li>
+                <li>
+                    <a href="#tab-2">Click tab 2</a>
+                </li>
+                <li>
+                    <a href="#tab-3">Click tab 3</a>
+                </li>
+            </ol>
+
+            <p id="tab-1">
+                This is tab one
+            </p>
+            
+            <p id="tab-2">
+                This is tab two
+            </p>
+            
+            <p id="tab-3">
+                This is tab 3
+            </p>
+        </div>
+    </body>
+</html>

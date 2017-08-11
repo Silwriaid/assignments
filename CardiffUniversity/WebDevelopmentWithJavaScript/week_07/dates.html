@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Function</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script type="text/javascript">
+            $(function() {
+                var today = new Date();							// Get today's date
+                var todayUtc = today.toUTCString();				// Convert it to a UTC string
+                
+                alert(todayUtc);
+                
+                var month = today.getMonth() + 1;				// Zero-based.  January = 0
+                var dayOfTheWeek = today.getUTCDay();			// Zero-based.  Sunday = 0
+                var dayOfTheMonth = today.getDate();			// Day of the month
+                var year = today.getUTCFullYear();				// Four digit year
+                
+                alert('Day of the Week: ' + dayOfTheWeek + '\n' + 
+                	  'Day of the Month: ' + dayOfTheMonth + '\n' + 
+                	  'Month: ' + month + '\n' + 
+                	  'Year: ' + year);
+
+            });					// End of execute on load with jQuery
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

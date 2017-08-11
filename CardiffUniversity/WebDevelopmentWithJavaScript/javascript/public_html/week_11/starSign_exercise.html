@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <title>Star Sign</title>
+        <meta name="description" content="">
+        <meta name="author" content="Peter">
+
+        <meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+        <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <script>
+            /*
+             * Write the constructor for an object of class date of birth containing 
+             * properties day, month and year of birth and method starsign() which 
+             * returns the starsign based on the day and month. Output star sign to #star
+             * 
+             * See http://www.psychicguild.com/horoscopes_explained.php
+             */
+            
+            function Dob(day, month, year) {
+              
+                this.day = day;
+                this.month = month;
+                this.year = year;
+                              
+                this.starSign = function () {
+                  
+                    if ((this.day > 22 && this.month === 12) || (this.day < 19 && this.month === 1)  ) {
+
+                        return 'Capricorn';
+                    }
+               }          
+            };
+            
+            var sign = new Dob(23, 12, 1980);
+            var ans = sign.starSign();        
+            
+            console.log(ans);
+
+        </script>
+    </head>
+
+    <body onload="Dob()">
+
+        <header>
+            <h1 id="star">dob</h1>
+        </header>
+
+
+
+
+        <footer>
+            <p>
+                &copy; Copyright  by Huw
+            </p>
+        </footer>
+
+    </body>
+</html>

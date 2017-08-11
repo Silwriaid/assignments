@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function changeDemo() {
+                document.getElementById("demo").innerHTML = "I am red";
+                document.getElementById("demo").style.backgroundColor = 'red';
+
+            }
+
+            function changeClass() {
+
+                var x = document.getElementsByClassName("widget");
+                x[0].style.backgroundColor = 'blue';
+                x[1].style.backgroundColor = 'blue';
+            }
+
+            function changeallPara() {
+                var x = document.getElementsByTagName("p");
+                x[0].style.backgroundColor = 'pink';
+                x[1].style.backgroundColor = 'pink';
+                x[2].style.backgroundColor = 'pink';
+            }
+        </script>
+        <style>
+            .widget { background-color: yellow }
+        </style>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <h1 onclick="alert('Test');">Test</h1>
+
+        <p id="demo">I am a paragraph with a id demo</p>
+        <p class="widget">I am a paragraph with a class widget</p>
+        <p class="widget">I am a paragraph with a class widget</p>
+
+        <a href="#" onclick="changeDemo()">Change paragraph with id demo</a><br />
+        <a href="#" onclick="changeClass()">Change paragraph with class widget to blue</a><br />
+        <a href="#" onclick="changeallPara()">Change all paragraphs to pink</a>
+    </body>
+</html>

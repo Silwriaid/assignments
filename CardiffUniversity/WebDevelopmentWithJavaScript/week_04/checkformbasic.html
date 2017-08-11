@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Form</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<style type="text/css">
+			body {
+				background: #E1E1F4;
+				color: #262675;
+				font-family: Arial, Helvetica, sans-serif
+			}
+			p.txt {
+				background: #BFBFFF;
+				float: left;
+				clear: left;
+				width: 15em;
+				text-align: right;
+				margin: 0 .5em;
+				padding: 0 .5em
+			}
+			p.bx, p.err, p.ok {
+				margin-left: 18em
+			}
+			#Submit {
+				clear: left;
+				float: left;
+				margin: 1em 0 0 8em;
+				padding: 0
+			}
+			div#form {
+				width: 40em
+			}
+			div#notes {
+				position: absolute;
+				top: 7em;
+				left: 35em;
+				width: 30em;
+				text-align: left;
+				background: #e1e1f4;
+				color: #BF0000
+			}
+			.err {
+				background: #FF9D9D
+			}
+			.ok {
+				background: white
+			}
+			p.ok {
+				background-color: #e1e1f4;
+			}
+		</style>
+		
+		<!-- include the jQuery javascript code using the Google CDN -->
+		<!-- Use the following source: "//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" -->
+		<!-- If you are running from the file system as opposed to Aptana's web server, prepend http: to the source -->
+		
+		<script type="text/javascript">
+            function checkForm() {
+            	
+            	// JQuery uses $('#id').removeClass('class-name') to remove a class from an element
+            	// Replace the following with calls to $('id').removeClass('err');
+            	// Note how jQuery expresses document.getElementById('class-name') with $(#id)
+            	
+                // Reset the background class
+                document.getElementById('name').className = 'ok';
+                document.getElementById('ad1').className = 'ok';
+                document.getElementById('ad4').className = 'ok';
+                document.getElementById('pc').className = 'ok';
+                document.getElementById('memtype').className = 'ok';
+                document.getElementById('magrad').className = 'ok';
+                document.getElementById('agreepar').className = 'ok';
+                
+
+                var isFormOK = true;
+                var errorMsg = "<p>The following fields are incorrect:</p><ul>";
+                
+                
+                // Replace all instances of document.getElementById() with the jQuery equivalent
+                
+                // Check the name field is filled in
+                var theElementValue = document.getElementById('name').value;
+                if (theElementValue.length == 0) {
+                    errorMsg += '<li>Give your name</li>';
+                    // In JQuery, use $(#name).addClass('err');
+                    document.getElementById('name').className = 'err';
+                    isFormOK = false;
+                }
+                
+                // Check address line 1 (ad1) is filledd in
+                theElementValue = document.getElementById('ad1').value;
+                if (theElementValue.length == 0) {
+                    errorMsg += '<li>Give your address</li>';
+                    // Convert to JQuery as described for the name field
+                    document.getElementById('ad1').className = 'err';
+                    isFormOK = false;
+                }
+
+                // Check address line 4 (ad4) field - Town & County - is filled in
+                theElementValue = document.getElementById('ad4').value;
+                if (theElementValue.length == 0) {
+                    errorMsg += '<li>Give your Town</li>';
+                    // Convert to JQuery as described for the name field
+                    document.getElementById('ad4').className = 'err';
+                    isFormOK = false;
+                }
+
+                // Check the post code field (pc) is filled in
+                theElementValue = document.getElementById('pc').value;
+                if (theElementValue.length == 0) {
+                    errorMsg += '<li>Give your post code</li>';
+                    // Convert to JQuery as described for the name field
+                    document.getElementById('pc').className = 'err';
+                    isFormOK = false;
+                }
+				
+				// Replace document.forms[0]['mag'] with its jQuery equivalent
+				// $("input[name=mag]")
+				
+                // Check magazine options
+                var theElementArray = document.forms[0]['mag'];
+                if (!theElementArray[0].checked && !theElementArray[1].checked) {
+                    errorMsg += '<li>You need to select a magazine</li>';
+                    // Convert to JQuery as described for the name field
+                    document.getElementById('magrad').className = 'err';
+                    isFormOK = false;
+                }
+
+                // Check selected membership type
+                theElementValue = document.getElementById('memtype').value;
+                if (theElementValue == 'x') {
+                    errorMsg += '<li>You need to select membership type</li>';
+                    // Convert to JQuery as described for the name field
+                    document.getElementById('memtype').className = 'err';
+                    isFormOK = false;
+                }
+
+                // Check the agreed field is checked
+                // Replace .getElementById() to JQuery in the normal way
+                // To use JQuery to check if the checkbox is checked, use if (!$('#agree').prop('checked')) {...}
+                var theElement = document.getElementById('agree');
+                if (!theElement.checked) {
+                    errorMsg += '<li>You must read and agree to the terms of membership</li>';
+                    // Convert to JQuery in the normal way...
+                    document.getElementById('agreepar').className = 'err';
+                    isFormOK = false;
+                }
+                
+                // Replace the following error output
+                if (!isFormOK) {
+                    document.getElementById('notes').innerHTML = '<div style="border: thick solid #BF0000">' + errorMsg + '</ul></div>';
+                    
+                // With the following:
+                // JQuery Effect methods: http://www.w3schools.com/jquery/jquery_ref_effects.asp
+                // if (!isFormOK) {
+                //	// Insert the error HTML into the #notes div
+                //    $('#notes').html(errorHTML);
+                //    
+                //    $('#notes').hide();					// Must be hidden for slideDown() to work
+                //    
+                //    $('#notes').attr('style', 'background:#d1d1e4');
+                //    
+                //    $('#notes div').slideUp(10);		// Hides all divs in #notes
+                //    $('#notes').fadeIn(3000);			// Fades in the #notes element
+                //    $('#notes div').slideDown();		// Reveals all divs in #notes
+                }
+                return isFormOK;
+            } //end checkForm()
+		</script>
+	</head>
+
+	<body>
+		<div id="notes"></div>
+
+		<div id="form">
+			<h1>Wizzico Club </h1>
+			<h2>Membership Application Form</h2>
+			<form name="form1" id="form1" method="get" action="" onsubmit="return checkForm()">
+				<p class="txt">
+					Name:
+				</p>
+				<p class="bx">
+					<input name="name" type="text" id="name" />
+				</p>
+				<p class="txt">
+					address
+				</p>
+				<p class="bx">
+					<input name="ad1" type="text" id="ad1" />
+					<br />
+					<input name="ad2" type="text" id="ad2" />
+					<br />
+					<input name="ad3" type="text" id="ad3" />
+				</p>
+				<p class="txt">
+					Town &amp; County
+				</p>
+				<p class="bx">
+					<input name="ad4" type="text" id="ad4" />
+				</p>
+				<p class="txt">
+					Post Code
+				</p>
+				<p class="bx">
+					<input name="pc" type="text" id="pc" />
+				</p>
+				</p>
+				<p class="txt">
+					magazine option
+				</p>
+				<p class="bx" id='magrad'>
+					<label>
+						<input type="radio"  name="mag" value="wiznews" />
+						wizzo news</label>
+					<br />
+					<label>
+						<input type="radio"  name="mag" value="fun" />
+						scripting fun</label>
+					<br />
+				</p>
+				<p class="txt">
+					membership level
+					<br />
+				</p>
+				<p class="bx">
+					<select id="memtype" name="memtype">
+						<option value="x">Please select</option>
+						<option value="gs">Grand Slam</option>
+						<option value="tc">Triple Crown</option>
+						<option value="ws">Wooden Spoon</option>
+					</select>
+				</p>
+				<p class="txt">
+					I have read the <a href="#">membership rules</a> and agree to them
+				</p>
+				<p class="bx" id="agreepar">
+					<input type="checkbox" id="agree" name="agree" value="agreed" />
+				</p>
+				<p class="bx">
+					<input type="submit" id="Submit" name="Submit" value="Submit" />
+				</p>
+			</form>
+		</div>
+	</body>
+</html>

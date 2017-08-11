@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>function</title>
+		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+		<script type="text/javascript">
+            $(function() {	//jQuery execute onload
+                // create a literal object with a method
+                employee = {
+                    fullname : 'fred bloggs',
+                    age : 21,
+                    job : 'manager',
+                    print : function() {
+                        alert('The full name, from the print() function is: ' + this.fullname);
+                    }
+                };
+                
+                // access the function using dot notation
+                employee.print();
+                
+                // you can even access methods using the bracket notation
+                employee['print']();
+                
+            });
+            //end of execute on load with jQuery
+		</script>
+	</head>
+
+	<body>
+		<div id="test"></div>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <title>Squares</title>
+        <meta name="description" content="">
+        <meta name="author" content="Huw">
+
+        <meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+        <!-- create a function addSquares which output the square of 1 to 20 in an unordered list -->
+
+        <script>
+            
+            function addSquares() {
+                
+                var div = document.getElementById('squares');
+
+                for (var i = 1; i <= 20; i++) {
+
+                    div.innerHTML = div.innerHTML + (i * i) + "\n";
+                }
+            }
+
+        </script>
+    </head>
+
+    <body onload="addSquares()">
+        <div>
+            <header>
+                <h1>Squares</h1>
+            </header>
+            <div id="squares">
+
+            </div>
+        </div>
+    </body>
+</html>

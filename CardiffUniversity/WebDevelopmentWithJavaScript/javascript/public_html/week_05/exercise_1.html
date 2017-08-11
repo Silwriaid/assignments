@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            var cars = ["Saab", "BMW", "Ford", "Seat", "VW", "Toyota"];
+            document.write("Full array: " + cars + "<br \>");
+            var i=0;
+// cars.length = 6 and not 5. array index starts at 0 therefore last array element is cars[5]
+// continue returns to the condition. break exits the loop. 
+
+            while(i<cars.length){
+                if(cars[i] == "BMW") {
+                    i++;
+                    continue;
+                }
+                document.write(cars[i] + "<br \>");
+                if(cars[i] == "VW"){
+                    break;
+                }
+                i++;
+            }
+            
+           
+        </script>
+            
+            
+    </head>
+    <body>
+        <div></div>
+    </body>
+</html>

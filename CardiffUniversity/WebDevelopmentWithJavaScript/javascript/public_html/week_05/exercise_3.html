@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script>
+// exercise: keep css but change selector to: 
+// 1. use has to select p with span
+// 2. use eq to select third element of p
+// 3. select headers only
+// 4. select p:even  / p:odd
+// 5. select last-child for p
+// 6. select 4th p child using nth-child: what happens?
+// 7. add class orange to second p
+// 8. remove pink border round thr third p
+$(document).ready(function(){
+        
+    //$("p").css("border", "solid red");
+    
+    // 1.
+    //$("p:has(span)").css("border", "solid green");
+    
+    // 2.
+    //$("p:eq(3)").css("border", "solid green");
+
+    // 3.    
+    //$(":header").css("color", "orange");
+    
+    // 4.
+    //$("p:even").css("border", "solid green");
+    //$("p:odd").css("border", "solid blue");
+
+    // 5.
+    //$("p:last-child").css("border", "solid red");
+    
+    // 6.
+    $("p:nth-child(5)").css("border", "dotted red");
+    
+    // 7.
+    //$("p:nth-child(2)").addClass("orange");
+    
+    // 8
+    //$("p").removeAttr("class");
+    
+});
+</script>
+<style>
+    .orange{
+        background: orange;
+    }
+    .pink{
+        border: solid pink;
+    }
+</style>
+</head>
+<body>
+    <div>
+        <p>this is a p element only</p>
+        <p><span>this is a p with a span element</span></p>
+        <p class="pink">this is a p element only</p>
+
+        <h1>This is a header</h1>
+<p>this is a p element only</p>         
+    </div>
+</body>
+</html>

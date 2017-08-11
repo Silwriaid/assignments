@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Async AJAX</title>
+		<script type="text/javascript">
+            function loadXMLDoc() {
+                // Create an xmlhttprequest object IE7+ and all other browsers
+                
+                xhr = new XMLHttpRequest();
+                xhr.open('POST', 'http://learn.cf.ac.uk/staff/semahd/javascript/lesson8/ajax.php?r=' + Math.random(), true);
+                xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+                xhr.send("");
+                xhr.onreadystatechange = function(){
+                    
+                    document.getElementById("replacedtext").innerHTML = xhr.responseText;
+                
+            }
+
+                // Make the request
+                // NOTE:this script simulates a network delay
+                
+            }
+		</script>
+	</head>
+	<body>
+
+		<div id="replacedtext">
+			<h2>This text will be changed by AJAX (after a delay)</h2>
+			<p>
+				But you can still type into the text box whilst waiting for the server.
+			</p>
+		</div>
+		<input name="ajaxtest" type="button" value="change text" onclick="loadXMLDoc()"/>
+		<input type="text" />
+		<!---->
+	</body>
+</html>
