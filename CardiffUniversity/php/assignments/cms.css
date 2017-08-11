@@ -1,0 +1,65 @@
+body {
+    font-family: Verdana,'Sans Serif';
+    background-image: url(/learn/phpcourse/resources/schematic.jpg);
+    margin: 10px;
+}
+
+div.project {
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    border: 1px solid #cccccc;
+    background-color: #dddddd;
+    padding: 10px 10px 10px 50px;
+    margin: 0px 0px 20px;
+    font-size: 12px;
+}
+
+h1 {
+    color: white;
+    font-size: 26px;
+    font-weight: normal;
+    line-height: 50px;
+    padding-left: 60px;
+    background-color: black;
+    background-image: url(/learn/phpcourse/resources/digital-icon.png);
+    background-repeat: no-repeat;
+    margin: 0px;
+}
+
+h2 {
+    color: #333;
+    font-size: 26px;
+    font-weight: bold;
+    display: block;
+}
+
+h3 {
+    color: #333;
+    font-size: 16px;
+}
+
+hr {
+    display: block;
+    -webkit-margin-before: 0.5em;
+    -webkit-margin-after: 0.5em;
+    -webkit-margin-start: auto;
+    -webkit-margin-end: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+p, a, td, li {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+a:hover {
+
+    color: #d3374a;
+    text-decoration: none;
+}

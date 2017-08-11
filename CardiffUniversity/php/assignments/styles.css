@@ -1,0 +1,474 @@
+
+body {
+    font-family: Verdana,'Sans Serif';
+    background-image: url('/learn/phpcourse/resources/schematic.jpg');
+    margin:10px;
+}
+
+h1 {
+    color:white;
+    font-size: 26px;
+    font-weight:normal;
+    line-height: 50px;
+    padding-left: 60px;
+    background-color: black;
+    background-image: url('/learn/phpcourse/resources/digital-icon.png');
+    background-repeat:no-repeat;
+    margin: 0px;
+}
+
+/*
+h1 > div.project {
+    margin-bottom: 0px;
+}
+*/
+
+h2 {
+    color:#333;
+    font-size: 26px;
+}
+
+h3 {
+    color:#333;
+    font-size: 16px;
+}
+
+h2 span {
+    color:#ccc;
+}
+
+.small {
+    font-size:12px;
+
+}
+
+.success {
+    padding: 10px;
+    color: #58C43A;
+    border: 1px solid #58C43A;
+    background-color:#CBFFBC;
+}
+.error {
+    padding: 10px;
+    color: #F93B3B;
+    border: 1px solid #F93B3B;
+    background-color:#F7CFCF;
+}
+
+p,a,td,li {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+p.links {
+    padding: 0 5px;;
+}
+
+p label {
+    float:left;
+    display:block;
+    width:180px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+a:hover {
+    text-decoration: none;
+    color: #D3374A;
+}
+
+code {
+    font-size: 12px;
+    font-family: 'Lucida Console',Mono,'Courier New';
+}
+
+table {
+    border-collapse: collapse;
+    width:100%;
+}
+
+th {
+    text-align:left;
+}
+
+th,td {
+    padding:5px 10px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+table.index th {
+    width:500px;
+}
+table.index td {
+
+}
+
+table td em {
+    color:#D3374A;
+}
+
+table.index span.description {
+    padding-left: 20px;
+}
+
+table tr.heading,
+table tr.heading:hover,
+table tr.heading th,
+table tr.heading th:hover {
+    text-align: center;
+    background-color: #CCCCCC;
+    padding: 10px;
+}
+
+table td.icon {
+    width: 80px;
+    text-align: center;
+}
+
+table td a {
+    white-space: nowrap;
+}
+
+table.pagination{
+    background-color: #CCC;
+}
+
+table.pagination p,
+table.pagination a {
+    color: #666;
+    font-size: 12px;
+    line-height: 0px;
+}
+
+table.pagination p span {
+    color: #000;
+}
+
+table.pagination a.link {
+    display     : inline-block;
+    height      : 30px;
+    border      : 1px solid #333;
+    font-size   : 14px;
+    line-height : 26px;
+    margin      : 0px 3px;
+    background-color: #BCBCBC;
+    padding     : 0px 10px;
+}
+
+table.pagination a.link:hover {
+    background-color: #98A0BA;
+}
+
+table.pagination a.link.selected {
+    background-color: #8992AF;
+    color: #FFFFFF;
+}
+
+table.login {
+    width: 800px;
+    margin: 20px auto;
+}
+
+table.login th,
+table.login td {
+    vertical-align: middle;
+}
+
+table.login th span {
+    display:inline-block;
+    padding: 5px;
+    font-weight:normal;
+    font-size: 14px;
+}
+
+span.description {
+    display:block;
+    margin-top: 5px;
+    font-weight: normal;
+    font-size:14px;
+    font-style: italic;
+    color: #333;
+}
+
+form input,
+form textarea,
+form select{
+    padding: 5px 10px;
+}
+
+form input[type=submit]{
+    font-weight: bold;
+}
+
+select,
+form textarea,
+form input[type=text],
+form input[type=password],
+form input[type=email]{
+    width: 200px;
+}
+
+form input[type=text].large {
+    width: 400px;
+    padding: 10px;
+}
+
+
+div.errors {
+    width: 400px;
+    background-color: #FCE0E0;
+    border: 1px solid #FF0000;
+}
+
+div.project {
+    background-image: url('/learn/phpcourse/resources/alert.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    border: 1px solid #cccccc;
+    background-color: #dddddd;
+    padding: 10px 10px 10px 50px;
+    margin: 0px 0px 20px;
+    font-size: 12px;
+}
+
+.center {
+    text-align:center
+}
+
+.pdf {
+    background-image: url('/learn/phpcourse/resources/pdf.png');
+    background-position: 0px 5px;
+    background-repeat: no-repeat;
+    padding-left: 22px;
+}
+
+/* Calendar */
+
+table.calendar th.prev,
+table.calendar th.next,
+table.calendar th.current {
+    background-color: #D1D1D1;
+    height: 30px;
+
+}
+
+table.calendar th.day {
+    background-color: #EAEAEA;
+    color: #666;
+}
+
+table.calendar td {
+    background-color: #F4F4F4;
+    height: 20px;
+}
+
+table.calendar td.blank {
+    background: none;
+}
+
+table.calendar th.prev {
+    text-align:left;
+}
+
+table.calendar th.next {
+    text-align:right;
+}
+
+table.calendar th.current {
+    padding-top: 5px;
+    text-align:center;
+    font-size: 20px;
+    color:#666;
+}
+
+table.calendar td span.number {
+    display: inline-block;
+    font-size: 12px;
+}
+
+table.calendar td:hover {
+    background-color: #D1D1D1;
+}
+
+table.calendar td.blank:hover {
+    background: none;
+}
+
+
+/*  H A N G M A N   */
+
+#hangman div.image {
+    float:left;
+}
+
+#hangman div.main {
+    margin-top: 50px;
+}
+
+#hangman h1 {
+    margin-bottom: 20px;
+}
+
+#hangman h2 {
+    font-size: 40px;
+    letter-spacing: 5px;
+}
+
+#hangman h3 span.letter {
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 5px;
+    display: inline-block;
+    width : 36px;
+    height: 36px;
+    text-align:center;
+    margin-bottom: 20px;
+    border: 1px solid #BCBABA;
+    color: #BCBABA;
+}
+
+#hangman h3 span.letter:hover {
+    color: #666;
+    border: 1px solid #666;
+}
+
+#hangman h3 span.correct {
+    background-color: #DEF7E1;
+    color: #666;
+    border: 1px solid #666;
+}
+
+#hangman h3 span.incorrect {
+    background-color: #F2C4C9;
+    color: #666;
+    border: 1px solid #666;
+}
+
+p.win {
+    color: green;
+    font-weight:bold;
+}
+
+p.lose {
+    color: red;
+    font-weight:bold;
+}
+
+.btn {
+    background-color: #70C462;
+    color: white;
+    font-weight: normal;
+    padding: 10px;
+    border-radius: 5px;
+    border: 0 none;
+    display: inline-block;
+}
+.btn:hover {
+    background-color: #5DA850;
+    color: #333;
+}
+
+
+/* LOGIN */
+#login {
+    text-align: center;
+}
+#login h2 {
+    margin-top: 50px;
+}
+#login h4 {
+    margin-top: 30px;
+}
+#login form {
+    margin: 30px;
+}
+
+
+span.right {
+    float:right
+}
+
+span.small {
+    font-size: 12px;
+    color:grey;
+    font-style: italic;
+    display: inline-block;
+}
+
+/* PRE STYLES.... */
+
+pre.php {       margin: 20px;   padding-left: 20px; background-color: #E3F0FC;  border: 2px dashed #636B8E; }
+pre.mysql {     margin: 20px;   padding-left: 20px; background-color: #FFFDBC;  border: 2px dashed #CECD96;}
+pre.html {      margin: 20px;   padding-left: 20px; background-color: #FFE2C9;  border: 2px dashed #CECD96;}
+pre.session {   margin: 20px;   padding: 20px;      background-color: #FFF;     border: 2px dashed #CECD96;}
+
+pre.code {
+    margin:0px;
+}
+pre.inactive {
+    color:grey;
+}
+
+pre span {
+    color: grey;
+}
+
+
+.projectRequirements {
+    display:block;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+.projectRequirements img {
+    margin-bottom: -10px;
+}
+.projectRequirements:hover {
+    border: 1px dotted #D3374A;
+}
+
+.related {
+    margin-top: 50px;
+    border: 1px solid #333;
+    font-size: 14px;
+    color: #333;
+    padding: 0 20px 20px;
+}
+
+
+.related h2 {
+    margin:0px -20px;
+    font-size: 20px;
+    color:#333;
+    background-color: #ddd;
+    padding: 3px 20px;
+    border-bottom: 1px solid #333;
+}
+
+
+/******************************************************************************/
+/****                       S Q L   T A B L E S                               */
+/******************************************************************************/
+table#sql {
+    width: 500px;
+    padding:0px;
+    margin:0px;
+    border-collapse: collapse;
+    border: 2px solid #333;
+    margin: 10px auto;
+}
+table#sql td,th { padding: 5px;   }
+table#sql td {    font-size: 12px;			}
+table#sql th {    font-size: 14px;  background-color: #999; color:#FFF; text-transform:uppercase }
+table#sql td.field {  width:150px;    font-weight: bold;}
+table#sql td.key {    width:150px;}
+table#sql td.type {   width:150px;}
+table#sql td.extra {  width:150px;}
+table#sql .odd {	background-color: #FFFFFF;	}
+table#sql .even {	background-color: #EFEFEF;	}
+/******************************************************************************/
+/* CM */
